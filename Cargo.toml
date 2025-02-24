@@ -1,0 +1,53 @@
+[package]
+name = "decentralized_identity"
+version = "0.1.0"
+edition = "2021"
+
+# Authors and License
+authors = Benjamin Sat
+license = "Apache-2.0"
+
+# Description for crates.io or GitHub
+description = "A decentralized identity management platform using blockchain technology with quantum-resistant cryptography."
+repository = "https://github.com/Benjmain2099/decentralized_identity"
+readme = "README.md"
+keywords = ["blockchain", "identity", "post-quantum", "rust"]
+categories = ["cryptography", "web-programming", "distributed-systems"]
+
+[dependencies]
+# Core Rust libraries
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = "0.4" # For timestamps
+sha2 = "0.10" # For hashing
+rand = "0.8" # For randomness
+rand_chacha = "0.3" # ChaCha RNG
+
+# Networking
+tokio = { version = "1", features = ["full"] } # Async runtime
+warp = "0.3" # Web server framework
+
+# Cryptography
+pqcrypto-dilithium = "0.1" # Post-Quantum Signature Scheme
+aes-gcm = "0.9" # Encryption (AES-GCM)
+ring = "0.16" # General-purpose crypto
+
+# Development tools
+clap = "4.0" # CLI argument parsing (optional, if needed)
+
+[dev-dependencies]
+# Testing and linting
+cargo-clippy = { version = "0.1", optional = true }
+pretty_assertions = "1.0" # Better test output
+
+[features]
+default = []
+quantum-resistance = ["pqcrypto-dilithium"]
+encryption = ["aes-gcm", "ring"]
+
+[[bin]]
+name = "decentralized_identity"
+path = "src/main.rs"
+
+[build-dependencies]
+# Build-time dependencies

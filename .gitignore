@@ -1,0 +1,17 @@
+# Verzeichnisse und Dateien, die von Cargo erzeugt werden
+/target/
+
+# Cargo Lock-Datei (optional: in Bibliotheken oft ignoriert, in Applikationen manchmal versioniert)
+# Cargo.lock
+
+# Temporäre Dateien, die von Editoren oder dem Betriebssystem erzeugt werden
+*.swp
+.DS_Store
+
+# IDE- und Editor-Konfigurationen
+.idea/
+.vscode/
+*.rs.bk
+
+# Log-Dateien
+*.log
